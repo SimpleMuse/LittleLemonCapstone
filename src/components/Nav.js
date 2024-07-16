@@ -1,6 +1,7 @@
-export const Nav = () => {
+export const Nav = (props) => {
+
   return (
-    <nav>
+    <nav className={props.navOpened ? 'open': 'closed'}>
       <ul>
         <li>
           <a href="#">Home</a>

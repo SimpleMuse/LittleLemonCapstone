@@ -154,7 +154,26 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
-  header .hamburg-menu img { display: block; }
+  header .hamburg-menu img { 
+    display: block;
+    height: 1.25rem;
+    width: 1.25rem;
+  }
+  .nav-wrapper nav.closed {
+    display: none;
+  }
+  .nav-wrapper nav.open { 
+    display: block;
+    ul { 
+      flex-direction: column; 
+      li {
+        text-align: left;
+        padding-left: 1rem;
+        border-right: 0;
+        border-top: 1px solid #fff;
+      }
+    }
+  }
   footer .footer-flex { 
     flex-direction: column; 
     .footer-item-1 {

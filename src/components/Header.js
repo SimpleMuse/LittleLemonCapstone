@@ -2,11 +2,16 @@ import img_logo from '../images/Logo.svg';
 import img_hamburger from '../images/icon _hamburger_menu_.svg';
 import img_basket from '../images/Basket.svg';
 
-export const Header = () => {
+export const Header = (props) => {
+
+  const handleHamburgerClick = () => {
+    props.setNavOpened(!props.navOpened);
+  }
+
   return (
     <header>
       <div className="header-element hamburg-menu">
-        <img src={img_hamburger} alt="Expand Menu" />
+        <img src={img_hamburger} alt="Expand Menu" onClick={handleHamburgerClick} />
       </div>
       <div className="header-element header-logo">
         <a href="/" aria-label="Link to home page">
