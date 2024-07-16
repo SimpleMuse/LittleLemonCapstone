@@ -1,38 +1,164 @@
+body {
+  font-family: "Karla", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.heading {
+  font-family: "Markazi Text", serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.app-container-wrapper {
+  background-color: #fff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+header {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1rem .5rem;
+  height: 4rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  flex-direction: row;
+  .header-element {
+    flex: 1;
   }
-  to {
-    transform: rotate(360deg);
+  .hamburg-menu {
+    text-align: left;
+    padding-top: 1.25rem;
+    img {
+      display: none;
+    }
+  }
+  .header-logo {
+    text-align: center;
+    img {
+      height: 105%;
+      width: 105%;
+    }
+  }
+  .online-order {
+    text-align: end;
+    padding-top: .75rem;
+  }
+}
+
+.nav-wrapper {
+  background-color: #495E57;
+}
+
+nav {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+  background-color: #495E57;
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    li {
+      flex: 1;
+      text-align: center;
+      padding: 0.5rem;
+      border-right: #fff solid 2px;
+      &:last-child {
+        border-right: 0;
+      }
+      a, a:visited {
+        color: #fff;
+        &:hover, &:focus {
+          text-decoration: none;
+        }
+      }
+      &:hover, &:focus, &:focus-within {
+        background-color: #FBDABB;
+        a {
+          color: #333;
+        }
+      }
+    }
+  }
+}
+
+.main-wrapper {
+  min-height: calc(100vh - 308px);
+  main {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(2, 1fr);
+    grid-row-gap: 1rem;
+    .main-hero {
+      grid-area: 1 / 1 / 2 / 2;
+    }
+    .main-content {
+      grid-area: 2 / 1 / 3 / 3;
+    }
+  }
+}
+
+.footer-wrapper {
+  background-color: #495E57;
+}
+
+footer {
+  color: #fff;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+
+  .footer-flex {
+    display: flex;
+    flex-direction: row;
+
+    .footer-item-1 {
+      flex: .75;
+      text-align: right;
+      padding: 1rem;
+      img {
+        background-color: #fff;
+        border-radius: 16px;
+        padding: .75rem 2rem;
+      }
+    }
+
+    .footer-item-2 {
+      flex: 1.25;
+      h2.heading {
+        margin: 0;
+        color: #F4CE14;
+      }
+      text-align: left;
+      padding: 1rem;
+    }
+  }
+
+  .footer-copyright {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: .75rem;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  header .hamburg-menu img { display: block; }
+  footer .footer-flex { 
+    flex-direction: column; 
+    .footer-item-1 {
+      text-align: center;
+    }
   }
 }
